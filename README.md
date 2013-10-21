@@ -7,8 +7,8 @@ Introduction
 kotex-plain is a package for typesetting Hangul, the native 
 alphabet of the Korean languager, using plain TeX engine.
 kotex-plain belongs to ko.TeX, a comprehensive Korean typesetting 
-system together with kotex-oblivoir, cjk-ko, XeTeX-ko, LuaTeX-ko, and 
-kotex-utils.
+system together with kotex-utf, kotex-oblivoir, cjk-ko, XeTeX-ko, 
+LuaTeX-ko, and kotex-utils.
 
 Usage
 -----
@@ -40,8 +40,15 @@ as follows:
 For more information, please refer to the document included with
 kotex-utf package (written in Korean).
 
-Developer and License
------------------------
+License
+-------
 
-Soojin Nam <sjnam@ktug.org> (LPPL, maintained)
+kotex-plain is licensed under the LaTeX Project Public
+License (LPPL).
+
+Contacts
+--------
+
+Please report any errors or suggestions to the package maintainer,
+Kihwang Lee <leekh@ktug.org>.
 
