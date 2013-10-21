@@ -5,7 +5,7 @@ Introduction
 ------------
 
 kotex-plain is a package for typesetting Hangul, the native 
-alphabet of the Korean languager, using plain TeX engine.
+alphabet of the Korean language, using plain TeX engine.
 kotex-plain belongs to ko.TeX, a comprehensive Korean typesetting 
 system together with kotex-utf, kotex-oblivoir, cjk-ko, XeTeX-ko, 
 LuaTeX-ko, and kotex-utils.
