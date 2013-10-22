@@ -24,12 +24,12 @@ Korean documents needs to be encoded in UTF-8.
 
 To specify Hangul fonts, you can use the following methods:
 
-* `\hfont{outbb}{at 12pt}: This command set the current Hangul font
+* `\hfont{outbb}{at 12pt}`: This command set the current Hangul font
 as 12 point bold.  This is the most general way of specifying
 Hangul fonts.
-* `\hfontname{outbtb}: This is equivallent to `\hfont{outbb}{}`, which
+* `\hfontname{outbtb}`: This is equivallent to `\hfont{outbb}{}`, which
 only applies bold typeface to the current font.
-* `\hfontsize{at 12pt}: This command changes the size of the current
+* `\hfontsize{at 12pt}`: This command changes the size of the current
 font as 12 point. Same effect can be achieved by `\hfont{}{at 12pt}`.
 
 To use CWEB system for literate programming, you can use `hangulcweb.tex`
