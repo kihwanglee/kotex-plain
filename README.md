@@ -8,8 +8,8 @@ kotex-plain is a package for typesetting Hangul, the native
 alphabet of the Korean language, using plain TeX engine.
 The input Korean text should be encoded in UTF-8.
 kotex-plain belongs to ko.TeX, a comprehensive Korean typesetting 
-system together with kotex-utf, kotex-oblivoir, cjk-ko, xetex-ko, 
-luatex-ko, and kotex-utils.
+system together with kotex-utf, kotex-oblivoir, kotex-utils,
+cjk-ko, xetexko, and luatexko.
 
 Files
 -----

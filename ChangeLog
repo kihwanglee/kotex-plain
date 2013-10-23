@@ -3,6 +3,14 @@
 	Version 2.0.2
 
 	* kotexplain.tex: fix for xetexko and luatexko v2.1
+	* hangulcweb.sty: fix for xetexko and luatexko v2.1
+	* kotexutf.sty: fix for xetexko and luatexko v2.1
+
+2010-01-04	Dohyum Kim <nomos at ktug org>
+
+	Version 2.0.1
+
+	* kotexutf.tex: finemath on bas been plain TeX default
 
 2009-03-06	Dohyun Kim <nomos at ktug org>
 
