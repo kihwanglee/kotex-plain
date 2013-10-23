@@ -11,6 +11,21 @@ kotex-plain belongs to ko.TeX, a comprehensive Korean typesetting
 system together with kotex-utf, kotex-oblivoir, cjk-ko, xetex-ko, 
 luatex-ko, and kotex-utils.
 
+Files
+-----
+
+### TeXinputs
+
+    kotexplain.tex -> tex/plain/kotex/
+    kotexutf.tex -> tex/plain/kotex/
+    kotexutf-core.tex -> tex/plain/kotex/
+    hangulcweb.tex -> tex/plain/kotex/
+
+### Documents
+
+    README (this file) -> doc/plain/kotex/
+    ChangeLog -> doc/plain/kotex/
+
 Usage
 -----
 
@@ -40,8 +55,8 @@ as follows:
 For more information, please refer to the kotex-utf package documentation 
 (written in Korean).
 
-License and copyright
----------------------
+License
+-------
 
 kotex-plain is licensed under the LaTeX Project Public
 License (LPPL).
