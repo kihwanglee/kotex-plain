@@ -1,4 +1,8 @@
-2013-10-26	Kangsoo Kim <karnes at ktug org>
+2013-10-28  Kihwang Lee  <leekh at ktug org>
+
+	No version change, CTAN update
+
+2013-10-26  Kangsoo Kim  <karnes at ktug org>
 
 	Version 2.0.2
 
@@ -6,50 +10,63 @@
 	* hangulcweb.sty: fix for xetexko and luatexko v2.1
 	* kotexutf.sty: fix for xetexko and luatexko v2.1
 
-2010-01-04	Dohyum Kim <nomos at ktug org>
+2013-10-24  Kihwang Lee  <leekh at ktug org>
+
+	No version change
+
+	* Uploaded to CTAN
+
+2013-10-21  Kihwang Lee  <leekh at ktug org>
+
+	Version 2.0.0
+
+	* kotex-plain packaging, uploaded to https://github.com/kihwanglee/kotex-plain
+
+2010-01-04  Dohyum Kim  <nomos at ktug org>
 
 	Version 2.0.1a
 
 	* kotexutf.tex: finemath on bas been plain TeX default
 
-2009-03-06	Dohyun Kim <nomos at ktug org>
+2009-03-06  Dohyun Kim  <nomos at ktug org>
 
 	Version 2.0.1
 
 	* kotexplain.tex: plaintex wrapper
 
-2009-03-05	Dohyun Kim <nomos at ktug org>
+2009-03-05  Dohyun Kim  <nomos at ktug org>
 
 	Version 2.0.0
 
 	* kotexplain.tex: do nothing except loading kotexutf.tex
 
-2007-06-26	Dohyum Kim <nomos at ktug org>
+2007-06-26  Dohyum Kim  <nomos at ktug org>
 
 	Version 1.0.5
 
 	* kotexplain.tex: error if char does not exist
 
-2007-06-26	Dohyun Kim <nomos at ktug org>
+2007-06-26  Dohyun Kim  <nomos at ktug org>
 
 	Version 1.0.4
 
 	* kotexplain.tex: redefine U+2018, U+2019, u+201C, u+201D
 
-2007-06-25	Dohyun Kim <nomos at ktug org>
+2007-06-25  Dohyun Kim  <nomos at ktug org>
 
 	Version 1.0.3
 
 	* kotexplain.tex: fix bugs introduced by previous minor upgrade
 
-2007-06-24	Dohyun Kim <nomos at ktug org>
+2007-06-24  Dohyun Kim  <nomos at ktug org>
 
 	Version 1.0.2
 
 	* kotexplain.tex: lower multiple punctuations
 
-2007-06-14	Dohyun Kim <nomos at ktug org>
+2007-06-14  Dohyun Kim  <nomos at ktug org>
 
 	Version 1.0.1
 
 	* kotexplain.tex: \hu was too normal a CS. use \dhucs@hu instead
+
