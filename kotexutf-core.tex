@@ -46,7 +46,8 @@
 \ifnum\count@<"F4 \advance\count@\@ne
 \repeat
 
-\def\defineunicodecharXX#1#2{%
+\def\defineunicodecharXX#1{%
+  \ifx#1\end\else
   \protected\def#1##1{%
     \ifcsname u8:\string#1\string##1\endcsname
       \csname u8:\string#1\string##1\expandafter\endcsname
@@ -55,15 +56,15 @@
       \expandafter#1\expandafter##1%
     \fi
   }%
-  \ifx#2\end\else
-    \expandafter\defineunicodecharXX\expandafter#2%
+  \expandafter\defineunicodecharXX
   \fi
 }
 \defineunicodecharXX
           ^^c2^^c3^^c4^^c5^^c6^^c7^^c8^^c9^^ca^^cb^^cc^^cd^^ce^^cf
   ^^d0^^d1^^d2^^d3^^d4^^d5^^d6^^d7^^d8^^d9^^da^^db^^dc^^dd^^de^^df\end
 
-\def\defineunicodecharXXX#1#2{%
+\def\defineunicodecharXXX#1{%
+  \ifx#1\end\else
   \protected\def#1##1##2{%
     \ifcsname u8:\string#1\string##1\string##2\endcsname
       \csname u8:\string#1\string##1\string##2\expandafter\endcsname
@@ -72,14 +73,14 @@
       \expandafter#1\expandafter##1\expandafter##2%
     \fi
   }%
-  \ifx#2\end\else
-    \expandafter\defineunicodecharXXX\expandafter#2%
+  \expandafter\defineunicodecharXXX
   \fi
 }
 \defineunicodecharXXX
   ^^e0^^e1^^e2^^e3^^e4^^e5^^e6^^e7^^e8^^e9^^ea^^eb^^ec^^ed^^ee^^ef\end
 
-\def\defineunicodecharXXXX#1#2{%
+\def\defineunicodecharXXXX#1{%
+  \ifx#1\end\else
   \protected\def#1##1##2##3{%
     \ifcsname u8:\string#1\string##1\string##2\string##3\endcsname
       \csname u8:\string#1\string##1\string##2\string##3\expandafter\endcsname
@@ -88,8 +89,7 @@
       \expandafter#1\expandafter##1\expandafter##2\expandafter##3%
     \fi
   }%
-  \ifx#2\end\else
-    \expandafter\defineunicodecharXXXX\expandafter#2%
+  \expandafter\defineunicodecharXXXX
   \fi
 }
 \defineunicodecharXXXX
