@@ -1,3 +1,9 @@
+2015-04-21  Dohyun Kim  <nomos at ktug org>
+
+	Version 2.1.0
+
+	* kotexutf-core.tex: write literal Hangul characters in auxiliary files.
+
 2013-10-28  Kihwang Lee  <leekh at ktug org>
 
 	No version change, CTAN update
