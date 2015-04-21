@@ -2,7 +2,7 @@
 
 	Version 2.1.0
 
-	* kotexutf-core.tex: write literal Hangul characters in auxiliary files.
+	* kotexutf-core.tex: refined kernel macros.
 
 2013-10-28  Kihwang Lee  <leekh at ktug org>
 
