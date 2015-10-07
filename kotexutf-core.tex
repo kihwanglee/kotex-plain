@@ -128,7 +128,26 @@
 \def\dhucs@questionlower{}
 \def\dhucs@exclamationlower{}
 
+%% changes for avoiding errors on MiKTeX, 2015/10/07, by Karnes.
 \def\usehangulfontspec#1{%
+  \IfFileExists{hfontspec.#1}%
+  	{\x@usehangulfontspec{#1}}%
+	{%
+		\def\dhucs@hu{\z@}
+		\def\dhucs@interhchar{\z@}
+		\def\dhucs@fullstoplower{\z@}
+		\def\dhucs@exclamationlower{\z@}
+		\def\dhucs@questionlower{\z@}
+		\def\dhucs@serifhangulfont{nanummj}
+		\def\dhucs@sanshangulfont{nanumgt}
+		\def\dhucs@monohangulfont{nanumgt}
+		\def\dhucs@serifhanjafont{nanumgt}
+		\def\dhucs@sanshanjafont{nanumgt}
+		\def\dhucs@monohanjafont{nanumgt}
+	}%
+}
+
+\def\x@usehangulfontspec#1{%
   \begingroup
     \immediate\openin\z@=hfontspec.#1 %
     \ifeof\z@
