@@ -1,7 +1,7 @@
 %% File `kotexutf-core.tex`
 %%
-%% Copyright (C) 2009-2013 Dohyun Kim <nomos at ktug org>
-%% Copyright (C) 2015 Kangsoo Kim <karnes at ktug org>
+%% Copyright (C) 2009-2015 Dohyun Kim <nomos at ktug org>
+%% Copyright (C) 2015      Kangsoo Kim <karnes at ktug org>
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3c
@@ -123,32 +123,25 @@
 }
 
 %% hangul font specific dimens
-\def\dhucs@hu{}
-\def\dhucs@interhchar{}
-\def\dhucs@fullstoplower{}
-\def\dhucs@questionlower{}
-\def\dhucs@exclamationlower{}
-
 %% changes for avoiding errors on MiKTeX, 2015/10/07, by Karnes.
-\def\usehangulfontspec#1{%
-  \IfFileExists{hfontspec.#1}%
-  	{\x@usehangulfontspec{#1}}%
-	{%
-		\def\dhucs@hu{\z@}
-		\def\dhucs@interhchar{\z@}
-		\def\dhucs@fullstoplower{\z@}
-		\def\dhucs@exclamationlower{\z@}
-		\def\dhucs@questionlower{\z@}
-		\def\dhucs@serifhangulfont{nanummj}
-		\def\dhucs@sanshangulfont{nanumgt}
-		\def\dhucs@monohangulfont{nanumgt}
-		\def\dhucs@serifhanjafont{nanumgt}
-		\def\dhucs@sanshanjafont{nanumgt}
-		\def\dhucs@monohanjafont{nanumgt}
-	}%
-}
+%\def\dhucs@hu{}
+%\def\dhucs@interhchar{}
+%\def\dhucs@fullstoplower{}
+%\def\dhucs@questionlower{}
+%\def\dhucs@exclamationlower{}
+\def\dhucs@hu{\z@}
+\def\dhucs@interhchar{\z@}
+\def\dhucs@fullstoplower{\z@}
+\def\dhucs@exclamationlower{\z@}
+\def\dhucs@questionlower{\z@}
+\def\dhucs@serifhangulfont{nanummj}
+\def\dhucs@sanshangulfont{nanumgt}
+\def\dhucs@monohangulfont{nanumgt}
+\def\dhucs@serifhanjafont{nanumgt}
+\def\dhucs@sanshanjafont{nanumgt}
+\def\dhucs@monohanjafont{nanumgt}
 
-\def\x@usehangulfontspec#1{%
+\def\usehangulfontspec#1{%
   \begingroup
     \immediate\openin\z@=hfontspec.#1 %
     \ifeof\z@
@@ -636,7 +629,6 @@
     \rlap{\raise\dhucs@emph@raise
       \hbox to\dimen@{\normalfont\bfseries\hss˙\hss}}\fi %\fi
 }
-
 
 \endinput
 
