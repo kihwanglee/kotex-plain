@@ -2,9 +2,9 @@
 
 	Version X.X.X
 
-	* kotexutf-core.tex: allow non-ascii charecters in labels;
-	catcode of UTF-8 trailing tokens ("80 to "BF) is now 13 (active);
-	UTF-8 first byte token commands are now expandable (not protected).
+	* kotexutf-core.tex: allow non-ascii characters in labels;
+	catcodes of UTF-8 trailing tokens ("80 to "BF) are now 13 (active);
+	UTF-8 first-byte token commands are now expandable (not protected).
 
 2015-10-13  Kangsoo Kim  <karnes at ktug org>
 
