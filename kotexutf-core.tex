@@ -23,70 +23,111 @@
 \def\unihangul@two@octets#1#2{%
     \expandafter\unihangulchar\expandafter{%
       \number\numexpr
-	(`#1 - 192) * 64 +
-	(`#2 - 128) \relax}}
+       (`#1 - 192) * 64 +
+       (`#2 - 128) \relax}}
 \def\unihangul@three@octets#1#2#3{%
     \expandafter\unihangulchar\expandafter{%
       \number\numexpr
-	(`#1 - 224) * 4096 +
-	(`#2 - 128) * 64 +
-	(`#3 - 128) \relax}}
+       (`#1 - 224) * 4096 +
+       (`#2 - 128) * 64 +
+       (`#3 - 128) \relax}}
 \def\unihangul@four@octets#1#2#3#4{%
     \expandafter\unihangulchar\expandafter{%
       \number\numexpr
-	(`#1 - 240) * 262144 +
-	(`#2 - 128) * 4096 +
-	(`#3 - 128) * 64 +
-	(`#4 - 128) \relax}}
+       (`#1 - 240) * 262144 +
+       (`#2 - 128) * 4096 +
+       (`#3 - 128) * 64 +
+       (`#4 - 128) \relax}}
 
 \count@"80 \loop
-  \uccode\count@\z@
-  \lccode\count@\z@
-  \catcode\count@=12
+  \uccode\count@\count@
+  \lccode\count@\count@
 \ifnum\count@<"BF \advance\count@\@ne \repeat
 
 \count@"C2 \loop
-  \uccode\count@\z@
-  \lccode\count@\z@
+  \uccode\count@\count@
+  \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
   \lowercase{\endgroup
-    \protected\def~##1{%
-      \ifcsname U8:\string~\string##1\endcsname
-        \csname U8:\string~\string##1\expandafter\endcsname
+    \def~##1{%
+      \ifincsname
+        \string~\string##1%
       \else
-        \expandafter\unihangul@two@octets
-        \expandafter~\expandafter##1%
+        \ifx\protect\relax
+          \ifcsname U8:\string~\string##1\endcsname
+            \csname U8:\string~\string##1\endcsname
+          \else
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter\unihangul@two@octets
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter~%
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter##1%
+          \fi
+        \else
+          \noexpand~\noexpand##1%
+        \fi
       \fi }}
 \ifnum\count@<"DF \advance\count@\@ne \repeat
 
 \count@"E0 \loop
-  \uccode\count@\z@
-  \lccode\count@\z@
+  \uccode\count@\count@
+  \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
   \lowercase{\endgroup
-  \protected\def~##1##2{%
-    \ifcsname U8:\string~\string##1\string##2\endcsname
-      \csname U8:\string~\string##1\string##2\expandafter\endcsname
-    \else
-      \expandafter\unihangul@three@octets
-      \expandafter~\expandafter##1\expandafter##2%
-    \fi }}
+  \def~##1##2{%
+      \ifincsname
+        \string~\string##1\string##2%
+      \else
+        \ifx\protect\relax
+          \ifcsname U8:\string~\string##1\string##2\endcsname
+            \csname U8:\string~\string##1\string##2\endcsname
+          \else
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter\unihangul@three@octets
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter~%
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter##1%
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter##2%
+          \fi
+        \else
+          \noexpand~\noexpand##1\noexpand##2%
+        \fi
+      \fi }}
 \ifnum\count@<"EF \advance\count@\@ne \repeat
 
 \count@"F0 \loop
-  \uccode\count@\z@
-  \lccode\count@\z@
+  \uccode\count@\count@
+  \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
   \lowercase{\endgroup
-    \protected\def~##1##2##3{%
-      \ifcsname U8:\string~\string##1\string##2\string##3\endcsname
-        \csname U8:\string~\string##1\string##2\string##3\expandafter\endcsname
+    \def~##1##2##3{%
+      \ifincsname
+        \string~\string##1\string##2\string##3%
       \else
-        \expandafter\unihangul@four@octets
-        \expandafter~\expandafter##1\expandafter##2\expandafter##3%
+        \ifx\protect\relax
+          \ifcsname U8:\string~\string##1\string##2\string##3\endcsname
+            \csname U8:\string~\string##1\string##2\string##3\endcsname
+          \else
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter\unihangul@four@octets
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter~%
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter##1%
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter##2%
+            \expandafter\expandafter\expandafter\expandafter
+            \expandafter\expandafter\expandafter##3%
+          \fi
+        \else
+          \noexpand~\noexpand##1\noexpand##2\noexpand##3%
+        \fi
       \fi }}
 \ifnum\count@<"F4 \advance\count@\@ne \repeat
 
