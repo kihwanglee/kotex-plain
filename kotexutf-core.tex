@@ -40,13 +40,13 @@
        (`#4 - 128) \relax}}
 
 \count@"80 \loop
-  \uccode\count@\z@
-  \lccode\count@\z@
+  \uccode\count@\count@
+  \lccode\count@\count@
 \ifnum\count@<"BF \advance\count@\@ne \repeat
 
 \count@"C2 \loop
-  \uccode\count@\z@
-  \lccode\count@\z@
+  \uccode\count@\count@
+  \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
   \lowercase{\endgroup
@@ -72,8 +72,8 @@
 \ifnum\count@<"DF \advance\count@\@ne \repeat
 
 \count@"E0 \loop
-  \uccode\count@\z@
-  \lccode\count@\z@
+  \uccode\count@\count@
+  \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
   \lowercase{\endgroup
@@ -101,8 +101,8 @@
 \ifnum\count@<"EF \advance\count@\@ne \repeat
 
 \count@"F0 \loop
-  \uccode\count@\z@
-  \lccode\count@\z@
+  \uccode\count@\count@
+  \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
   \lowercase{\endgroup
