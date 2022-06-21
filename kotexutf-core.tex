@@ -116,7 +116,7 @@
   \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
-  \lowercase{\endgroup \def~{\unihangul@ii@octs~}}
+  \lowercase{\endgroup \protected\def~{\unihangul@ii@octs~}}
 \ifnum\count@<"DF \advance\count@\@ne \repeat
 
 \count@"E0 \loop
@@ -124,7 +124,7 @@
   \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
-  \lowercase{\endgroup \def~{\unihangul@iii@octs~}}
+  \lowercase{\endgroup \protected\def~{\unihangul@iii@octs~}}
 \ifnum\count@<"EF \advance\count@\@ne \repeat
 
 \count@"F0 \loop
@@ -132,7 +132,7 @@
   \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
-  \lowercase{\endgroup \def~{\unihangul@iv@octs~}}
+  \lowercase{\endgroup \protected\def~{\unihangul@iv@octs~}}
 \ifnum\count@<"F4 \advance\count@\@ne \repeat
 
 %% subfont plane and char slot
