@@ -1,7 +1,7 @@
 %% File `kotexutf-core.tex`
 %%
-%% Copyright (C) 2009-2015 Dohyun Kim <nomos at ktug org>
-%% Copyright (C) 2015      Kangsoo Kim <karnes at ktug org>
+%% Copyright (C) 2009-2022 Dohyun Kim <nomos at ktug org>
+%% Copyright (C) 2015-2022 Kangsoo Kim <karnes at ktug org>
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3c
@@ -39,6 +39,73 @@
        (`#3 - 128) * 64 +
        (`#4 - 128) \relax}}
 
+\def\unihangul@ii@octs#1#2{%
+  \ifincsname
+    \string#1\string#2%
+  \else
+    \ifx\protect\relax
+      \ifcsname u8:\string#1\string#2\endcsname
+        \csname u8:\string#1\string#2\endcsname
+      \else
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter\unihangul@two@octets
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#1%
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#2%
+      \fi
+    \else
+      \noexpand#1\noexpand#2%
+    \fi
+  \fi
+}
+\def\unihangul@iii@octs#1#2#3{%
+  \ifincsname
+    \string#1\string#2\string#3%
+  \else
+    \ifx\protect\relax
+      \ifcsname u8:\string#1\string#2\string#3\endcsname
+        \csname u8:\string#1\string#2\string#3\endcsname
+      \else
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter\unihangul@three@octets
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#1%
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#2%
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#3%
+      \fi
+    \else
+      \noexpand#1\noexpand#2\noexpand#3%
+    \fi
+  \fi
+}
+\def\unihangul@iv@octs#1#2#3#4{%
+  \ifincsname
+    \string#1\string#2\string#3\string#4%
+  \else
+    \ifx\protect\relax
+      \ifcsname u8:\string#1\string#2\string#3\string#4\endcsname
+        \csname U8:\string#1\string#2\string#3\string#4\endcsname
+      \else
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter\unihangul@four@octets
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#1%
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#2%
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#3%
+        \expandafter\expandafter\expandafter\expandafter
+        \expandafter\expandafter\expandafter#4%
+      \fi
+    \else
+      \noexpand#1\noexpand#2\noexpand#3\noexpand#4%
+    \fi
+  \fi
+}
+
 \count@"80 \loop
   \uccode\count@\count@
   \lccode\count@\count@
@@ -49,26 +116,7 @@
   \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
-  \lowercase{\endgroup
-    \def~##1{%
-      \ifincsname
-        \string~\string##1%
-      \else
-        \ifx\protect\relax
-          \ifcsname U8:\string~\string##1\endcsname
-            \csname U8:\string~\string##1\endcsname
-          \else
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter\unihangul@two@octets
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter~%
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter##1%
-          \fi
-        \else
-          \noexpand~\noexpand##1%
-        \fi
-      \fi }}
+  \lowercase{\endgroup \def~{\unihangul@ii@octs~}}
 \ifnum\count@<"DF \advance\count@\@ne \repeat
 
 \count@"E0 \loop
@@ -76,28 +124,7 @@
   \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
-  \lowercase{\endgroup
-  \def~##1##2{%
-      \ifincsname
-        \string~\string##1\string##2%
-      \else
-        \ifx\protect\relax
-          \ifcsname U8:\string~\string##1\string##2\endcsname
-            \csname U8:\string~\string##1\string##2\endcsname
-          \else
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter\unihangul@three@octets
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter~%
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter##1%
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter##2%
-          \fi
-        \else
-          \noexpand~\noexpand##1\noexpand##2%
-        \fi
-      \fi }}
+  \lowercase{\endgroup \def~{\unihangul@iii@octs~}}
 \ifnum\count@<"EF \advance\count@\@ne \repeat
 
 \count@"F0 \loop
@@ -105,30 +132,7 @@
   \lccode\count@\count@
   \begingroup
   \lccode`\~\count@
-  \lowercase{\endgroup
-    \def~##1##2##3{%
-      \ifincsname
-        \string~\string##1\string##2\string##3%
-      \else
-        \ifx\protect\relax
-          \ifcsname U8:\string~\string##1\string##2\string##3\endcsname
-            \csname U8:\string~\string##1\string##2\string##3\endcsname
-          \else
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter\unihangul@four@octets
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter~%
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter##1%
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter##2%
-            \expandafter\expandafter\expandafter\expandafter
-            \expandafter\expandafter\expandafter##3%
-          \fi
-        \else
-          \noexpand~\noexpand##1\noexpand##2\noexpand##3%
-        \fi
-      \fi }}
+  \lowercase{\endgroup \def~{\unihangul@iv@octs~}}
 \ifnum\count@<"F4 \advance\count@\@ne \repeat
 
 %% subfont plane and char slot
