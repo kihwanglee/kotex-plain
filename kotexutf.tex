@@ -2,7 +2,8 @@
 %%
 %%   2010.01.04  v1.1
 %%
-%% Copyright (C) 2010-2013 Dohyun Kim <nomos at ktug org>
+%% Copyright (C) 2010-2022 Dohyun Kim <nomos at ktug org>
+%% Copyright (C) 2015-2022 Kangsoo Kim <karnes at ktug org>
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3c
@@ -63,8 +64,8 @@
 \unless\ifdefined\normalfont \def\normalfont{\rm\hfontname{nanummjm}}\fi
 \unless\ifdefined\bfseries \def\bfseries{\bf\hfontname{nanummjb}}\fi
 
-% make first octet of a utf8 char active
-\count@"C2
+% make utf8 octets active
+\count@"80
 \loop\catcode\count@\active
   \ifnum\count@<"F4
   \advance\count@\@ne\repeat
